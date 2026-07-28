@@ -1,0 +1,87 @@
+public class Main {
+
+    static class PartePedido {
+        private String nombre;
+        private double valor;
+
+        public PartePedido(String nombre, double valor) {
+            this.nombre = nombre;
+            this.valor = valor;
+        }
+
+        public String getNombre() {
+            return nombre;
+        }
+
+        public double getValor() {
+            return valor;
+        }
+    }
+
+    public static double calcularPedido(PartePedido primerPlato, PartePedido bebida) {
+        return primerPlato.getValor() + bebida.getValor();
+    }
+
+    public static double calcularPedido(PartePedido primerPlato,
+                                        PartePedido segundoPlato,
+                                        PartePedido bebida) {
+
+        return primerPlato.getValor()
+                + segundoPlato.getValor()
+                + bebida.getValor();
+    }
+
+    public static double calcularPedido(PartePedido primerPlato,
+                                        PartePedido segundoPlato,
+                                        PartePedido bebida,
+                                        PartePedido postre) {
+
+        return primerPlato.getValor()
+                + segundoPlato.getValor()
+                + bebida.getValor()
+                + postre.getValor();
+    }
+
+    public static void main(String[] args) {
+
+        PartePedido sopa = new PartePedido("Sopa", 12000);
+        PartePedido gaseosa = new PartePedido("Gaseosa", 5000);
+
+        double total1 = calcularPedido(sopa, gaseosa);
+
+        System.out.println("PEDIDO 1");
+        System.out.println("Primer plato: " + sopa.getNombre());
+        System.out.println("Bebida: " + gaseosa.getNombre());
+        System.out.println("Total: $" + total1);
+
+        System.out.println();
+
+        PartePedido arroz = new PartePedido("Arroz con pollo", 18000);
+        PartePedido carne = new PartePedido("Carne Asada", 22000);
+        PartePedido jugo = new PartePedido("Jugo Natural", 6000);
+
+        double total2 = calcularPedido(arroz, carne, jugo);
+
+        System.out.println("PEDIDO 2");
+        System.out.println("Primer plato: " + arroz.getNombre());
+        System.out.println("Segundo plato: " + carne.getNombre());
+        System.out.println("Bebida: " + jugo.getNombre());
+        System.out.println("Total: $" + total2);
+
+        System.out.println();
+
+        PartePedido ensalada = new PartePedido("Ensalada", 15000);
+        PartePedido pescado = new PartePedido("Pescado", 26000);
+        PartePedido limonada = new PartePedido("Limonada", 7000);
+        PartePedido helado = new PartePedido("Helado", 8000);
+
+        double total3 = calcularPedido(ensalada, pescado, limonada, helado);
+
+        System.out.println("PEDIDO 3");
+        System.out.println("Primer plato: " + ensalada.getNombre());
+        System.out.println("Segundo plato: " + pescado.getNombre());
+        System.out.println("Bebida: " + limonada.getNombre());
+        System.out.println("Postre: " + helado.getNombre());
+        System.out.println("Total: $" + total3);
+    }
+}
