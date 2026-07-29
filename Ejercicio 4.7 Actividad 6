@@ -1,0 +1,138 @@
+public class Main {
+
+    static abstract class Animal {
+
+        protected String sonidos;
+        protected String alimentos;
+        protected String habitat;
+        protected String nombreCientifico;
+
+        public abstract String getNombreCientifico();
+        public abstract String getSonido();
+        public abstract String getAlimentos();
+        public abstract String getHabitat();
+    }
+
+    static class Perro extends Animal {
+
+        public Perro() {
+            sonidos = "Ladrido";
+            alimentos = "Carnívoro";
+            habitat = "Doméstico";
+            nombreCientifico = "Canis lupus familiaris";
+        }
+
+        public String getNombreCientifico() {
+            return nombreCientifico;
+        }
+
+        public String getSonido() {
+            return sonidos;
+        }
+
+        public String getAlimentos() {
+            return alimentos;
+        }
+
+        public String getHabitat() {
+            return habitat;
+        }
+    }
+
+    static class Lobo extends Animal {
+
+        public Lobo() {
+            sonidos = "Aullido";
+            alimentos = "Carnívoro";
+            habitat = "Bosque";
+            nombreCientifico = "Canis lupus";
+        }
+
+        public String getNombreCientifico() {
+            return nombreCientifico;
+        }
+
+        public String getSonido() {
+            return sonidos;
+        }
+
+        public String getAlimentos() {
+            return alimentos;
+        }
+
+        public String getHabitat() {
+            return habitat;
+        }
+    }
+
+    static class Leon extends Animal {
+
+        public Leon() {
+            sonidos = "Rugido";
+            alimentos = "Carnívoro";
+            habitat = "Pradera";
+            nombreCientifico = "Panthera leo";
+        }
+
+        public String getNombreCientifico() {
+            return nombreCientifico;
+        }
+
+        public String getSonido() {
+            return sonidos;
+        }
+
+        public String getAlimentos() {
+            return alimentos;
+        }
+
+        public String getHabitat() {
+            return habitat;
+        }
+    }
+
+    static class Gato extends Animal {
+
+        public Gato() {
+            sonidos = "Maullido";
+            alimentos = "Ratones";
+            habitat = "Doméstico";
+            nombreCientifico = "Felis silvestris catus";
+        }
+
+        public String getNombreCientifico() {
+            return nombreCientifico;
+        }
+
+        public String getSonido() {
+            return sonidos;
+        }
+
+        public String getAlimentos() {
+            return alimentos;
+        }
+
+        public String getHabitat() {
+            return habitat;
+        }
+    }
+
+    public static void main(String[] args) {
+
+        Animal[] animales = {
+                new Perro(),
+                new Lobo(),
+                new Leon(),
+                new Gato()
+        };
+
+        for (Animal animal : animales) {
+
+            System.out.println("Nombre científico: " + animal.getNombreCientifico());
+            System.out.println("Sonido: " + animal.getSonido());
+            System.out.println("Alimentación: " + animal.getAlimentos());
+            System.out.println("Hábitat: " + animal.getHabitat());
+            System.out.println();
+        }
+    }
+}
